@@ -5,9 +5,14 @@ const jwt =require("jsonwebtoken")
 const cookieParser =require('cookie-parser')
 const app = express()
 const port = process.env.PORT || 4000
+const dotenv = require('dotenv');
 const cors = require('cors')
 const UserModel =require('./models/Users')
+app.get("/",(req,res)=>{
+  res.setHeader("Access-Control-Allow-Credentials",true)
+  res.send("API is Running...");
 
+});
 
 app.get("/",(req,res)=>{
   res.setHeader("Access-Control-Allow-Credentials",true)
